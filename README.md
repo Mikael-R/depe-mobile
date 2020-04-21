@@ -1,6 +1,8 @@
-# myApp
-
-Creating my first hybrid program with Ionic
+# Depe-mobile
+Project under development.<br>
+All the features of Depe and a little more redone with Ionic.<br>
+<br>
+If you want to see the python version [click here](https://github.com/Mikael-R/Depe). Its documented in Brazilian Portuguese!
 
 ## Getting Started
 
