@@ -1,6 +1,8 @@
-# myApp
-
-Creating my first hybrid program with Ionic
+# Depe-mobile
+Project under development.<br>
+All the features of Depe and a little more redone with Ionic.<br>
+<br>
+If you want to see the python version [click here](https://github.com/Mikael-R/Depe). Its documented in Brazilian Portuguese!
 
 ## Getting Started
 
@@ -20,10 +22,10 @@ Ionic #Use the command 'npm install -g @ionic/cli'
 A step by step series of how run this project in your computer
 
 ```
-# Clone the repository (forked repository)
-$ git clone https://github.com/salva09/myApp.git
+# Clone the repository
+$ git clone https://github.com/Mikael-R/Depe-mobile
 # Go into the repository
-$ cd myApp
+$ cd Depe-mobile
 # Install dependencies
 $ npm install
 # Run the app

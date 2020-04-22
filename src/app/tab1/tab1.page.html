@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      Electron Distribution
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,13 +9,18 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
+      <ion-title size="large">Eletronic Distribution</ion-title>
     </ion-toolbar>
   </ion-header>
 
   <ion-card>
     <ion-header>
-      <ion-card-title>Tab 1</ion-card-title>
+      <ion-item>
+        <ion-label color="primary" position="floating"> | Number | Name | Symbol | </ion-label>
+        <ion-input [(ngModel)]="inputValue" ></ion-input>
+      </ion-item>
     </ion-header>
   </ion-card>
+
+  <ion-button expand="full" shape="round" (click)="buttonClick(inputValue)"> Ok </ion-button>
 </ion-content>
