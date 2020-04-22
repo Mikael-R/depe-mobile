@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Eletronic Distribution
+      Electron Distribution
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -15,7 +15,12 @@
 
   <ion-card>
     <ion-header>
-      <ion-card-title>Distribution</ion-card-title>
+      <ion-item>
+        <ion-label color="primary" position="floating"> | Number | Name | Symbol | </ion-label>
+        <ion-input [(ngModel)]="inputValue" ></ion-input>
+      </ion-item>
     </ion-header>
   </ion-card>
+
+  <ion-button expand="full" shape="round" (click)="buttonClick(inputValue)"> Ok </ion-button>
 </ion-content>
