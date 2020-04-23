@@ -23,9 +23,9 @@ A step by step series of how run this project in your computer
 
 ```
 # Clone the repository
-$ git clone https://github.com/Mikael-R/Depe-mobile
+$ git clone https://github.com/Mikael-R/Depe-Mobile
 # Go into the repository
-$ cd Depe-mobile
+$ cd Depe-Mobile
 # Install dependencies
 $ npm install
 # Run the app
