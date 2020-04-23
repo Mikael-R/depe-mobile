@@ -1,4 +1,4 @@
-# Depe-mobile
+# Depe-Mobile
 Project under development.<br>
 All the features of Depe and a little more redone with Ionic.<br>
 <br>
