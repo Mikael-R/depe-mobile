@@ -1,4 +1,9 @@
 import { Component } from '@angular/core';
+import { LogicService} from '../logic.service';
+import { Observable } from "rxjs";
+// @ts-ignore
+import { IData } from '../interfaces/data.inerface';
+import { async } from 'rxjs/internal/scheduler/async';
 
 @Component({
 	selector: 'app-tab1',
@@ -10,17 +15,19 @@ export class Tab1Page {
 
 	public inputValue: string = undefined;
 
-	constructor() { }
+	elements: Observable<IData[]>;
+
+	constructor(public _logic: LogicService) {}
+
 
 	capitalizeFirstLetter(string) {
 		return String(string).replace(/\w\S*/g, function (txt) { return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase() })
 	}
 
 	searchElement(value) {
-		import * as data from '../PeriodicTableJSON.json'
-
+		this.elements = this._logic.getData();
 		if (!isNaN(parseFloat(value))) {
-			for (let elements of data.elements) {
+			for (let elements of this.elements) {
 				if (value == elements.number) {
 					return {
 						"properties": [
@@ -49,7 +56,7 @@ export class Tab1Page {
 			}
 		}
 		else if (value.length > 3 && isNaN(value)) {
-			for (let elements of data.elements) {
+			for (let elements of this.elements) {
 				if (value == elements.name) {
 					return {
 						"properties": [
@@ -79,7 +86,7 @@ export class Tab1Page {
 		}
 		else if (value.length <= 3 && isNaN(value)) {
 			console.log('Symbol')
-			for (let elements of data.elements) {
+			for (let elements of this.elements) {
 				if (value == elements.symbol) {
 					return {
 						"properties": [
@@ -114,7 +121,8 @@ export class Tab1Page {
 
 	buttonClick(value) {
 		let element = this.searchElement(this.capitalizeFirstLetter(value))
-		alert(element.properties[0])
-                //alert('Click')
+		alert(this.elements.name[0])
+		console.log("Hey")
+		alert('Click')
 	}
 }
