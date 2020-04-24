@@ -115,6 +115,24 @@ export class Tab2Page {
 
 	buttonClick(value) {
 		let element = this.searchElement(this.capitalizeFirstLetter(value)).properties[0]
-		alert(`Name: ${element.name}\nNumber: ${element.number}\nSymbol: ${element.symbol}`)
+		alert(`
+Name: ${element.name}
+Number: ${element.number}
+Symbol: ${element.symbol}
+Mass: ${element.atomic_mass}
+Density: ${element.density}
+Summary: ${element.summary}
+Xpos: ${element.xpos}
+Ypos${element.ypos}
+Sheels: ${element.shells}
+Electron_Configuration: ${element.electron_configuration}
+Melt: ${element.melt}
+Boil: ${element.boil}
+Category: ${element.category}
+Phase: ${element.phase}
+Appearance: ${element.appearance}
+Color: ${element.color}
+Discovered_by: ${element.discovered_by}
+`)
 	}
 }
