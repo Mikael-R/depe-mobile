@@ -1,7 +1,5 @@
 {
   "name": "Depe-mobile",
-  "integrations": {
-    "cordova": {}
-  },
+  "integrations": {},
   "type": "angular"
 }
