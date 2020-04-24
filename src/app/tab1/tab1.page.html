@@ -1,8 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Electronic Distribution
-    </ion-title>
+    <ion-title>Eletronic Distribution</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -17,10 +15,10 @@
     <ion-header>
       <ion-item>
         <ion-label position="floating"> | Number | Name | Symbol | </ion-label>
-        <ion-input [(ngModel)]="inputValue" ></ion-input>
+        <ion-input [(ngModel)]="inputValueTab1" ></ion-input>
       </ion-item>
     </ion-header>
   </ion-card>
 
-  <ion-button expand="full" shape="round" (click)="buttonClick(inputValue)"> Ok </ion-button>
+  <ion-button expand="full" shape="round" (click)="buttonClick(inputValueTab1)"> Ok </ion-button>
 </ion-content>

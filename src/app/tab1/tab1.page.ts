@@ -18,7 +18,9 @@ export class Tab1Page {
 	}
 
 	searchElement(value) {
+		alert('searchElement')
 		if (!isNaN(parseFloat(value))) {
+			alert('Number')
 			for (let elements of data.elements) {
 				if (value == elements.number) {
 					return {
@@ -48,6 +50,7 @@ export class Tab1Page {
 			}
 		}
 		else if (value.length > 3 && isNaN(value)) {
+			alert('Name')
 			for (let elements of data.elements) {
 				if (value == elements.name) {
 					return {
@@ -77,7 +80,7 @@ export class Tab1Page {
 			}
 		}
 		else if (value.length <= 3 && isNaN(value)) {
-			console.log('Symbol')
+			alert('Symbol')
 			for (let elements of data.elements) {
 				if (value == elements.symbol) {
 					return {
@@ -112,9 +115,7 @@ export class Tab1Page {
 	}
 
 	buttonClick(value) {
-		let element = this.searchElement(this.capitalizeFirstLetter(value))
-		console.log("Hey")
-		console.log(data.elements[Number(value)].name);
-		alert(data.elements[Number(value)].electron_configuration);
+		let element = this.searchElement(this.capitalizeFirstLetter(value)).properties[0]
+		alert(`Name: ${element.name}\nNumber: ${element.number}\nSymbol: ${element.symbol}`)
 	}
 }
