@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import * as data from 'src/app/PeriodicTable.json';
 
 @Component({
   selector: 'app-tab2',

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import * as data from 'src/app/tab1/PeriodicTable.json';
+import * as data from 'src/app/PeriodicTable.json';
 
 @Component({
 	selector: 'app-tab1',
@@ -12,7 +12,6 @@ export class Tab1Page {
 	public inputValue: string = undefined;
 
 	constructor() {}
-
 
 	capitalizeFirstLetter(string) {
 		return String(string).replace(/\w\S*/g, function (txt) { return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase() })
