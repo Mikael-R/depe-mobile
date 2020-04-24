@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import * as data from 'src/app/tab1/PeriodicTable.json';
 
 @Component({
 	selector: 'app-tab1',
@@ -10,15 +11,14 @@ export class Tab1Page {
 
 	public inputValue: string = undefined;
 
-	constructor() { }
+	constructor() {}
+
 
 	capitalizeFirstLetter(string) {
 		return String(string).replace(/\w\S*/g, function (txt) { return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase() })
 	}
 
 	searchElement(value) {
-		import * as data from '../PeriodicTableJSON.json'
-
 		if (!isNaN(parseFloat(value))) {
 			for (let elements of data.elements) {
 				if (value == elements.number) {
@@ -114,7 +114,8 @@ export class Tab1Page {
 
 	buttonClick(value) {
 		let element = this.searchElement(this.capitalizeFirstLetter(value))
-		alert(element.properties[0])
-                //alert('Click')
+		console.log("Hey")
+		console.log(data.elements[Number(value)].name);
+		alert(data.elements[Number(value)].electron_configuration);
 	}
 }
