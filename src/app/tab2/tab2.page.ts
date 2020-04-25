@@ -28,7 +28,7 @@ export class Tab2Page {
 
 	updateLabel(element) {
 		if (element == null) {
-			alert('Element not found!')
+			alert('The value does not belong to any element!')
 			this.input_value_tab2 = undefined;
 			this.element_name_label_tab2 = undefined;
 			this.element_symbol_label_tab2 = undefined;
@@ -63,8 +63,8 @@ export class Tab2Page {
 		}
 	}
 
-	formatString(string) { // Capitalize the first letter and remove the blanks from the beginning and end
-		return String(string).trim().replace(/\w\S*/g, function (txt) { return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase() })
+	formatString(string) { // Capitalize the first letter and remove the blanks
+		return String(string).replace(/ /g, '').replace(/\w\S*/g, function (txt) { return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase() })
 	}
 
 	searchElement(value) {
