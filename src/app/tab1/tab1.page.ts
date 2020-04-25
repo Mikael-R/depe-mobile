@@ -9,18 +9,46 @@ import * as data from 'src/app/PeriodicTable.json';
 
 export class Tab1Page {
 
-	public inputValue: string = undefined;
+	public input_value_tab1: string = undefined;
+	public element_name_label_tab1: string = undefined;
+	public element_symbol_label_tab1: string = undefined;
+	public element_number_label_tab1: string = undefined;
+	public element_mass_label_tab1: string = undefined;
+	public element_density_label_tab1: string = undefined;
+	public element_shells_label_tab1: string = undefined;
+	public element_electron_configuration_label_tab1: string = undefined;
 
 	constructor() {}
 
-	capitalizeFirstLetter(string) {
-		return String(string).replace(/\w\S*/g, function (txt) { return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase() })
+	updateLabel(element) {
+		if (element == null) {
+			alert('Element not found!')
+			this.input_value_tab1 = undefined;
+			this.element_name_label_tab1 = undefined;
+			this.element_symbol_label_tab1 = undefined;
+			this.element_number_label_tab1 = undefined;
+			this.element_mass_label_tab1 = undefined;
+			this.element_density_label_tab1 = undefined;
+			this.element_shells_label_tab1 = undefined;
+			this.element_electron_configuration_label_tab1 = undefined;
+		}
+		else {
+			this.element_name_label_tab1 = element.name;
+			this.element_symbol_label_tab1 = element.symbol;
+			this.element_number_label_tab1 = element.number;
+			this.element_mass_label_tab1 = element.atomic_mass;
+			this.element_density_label_tab1 = element.density;
+			this.element_shells_label_tab1 = element.shells;
+			this.element_electron_configuration_label_tab1 = element.electron_configuration;
+		}
+	}
+
+	formatString(string) { // Capitalize the first letter and remove the blanks from the beginning and end
+		return String(string).trim().replace(/\w\S*/g, function (txt) { return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase() })
 	}
 
 	searchElement(value) {
-		alert('searchElement')
 		if (!isNaN(parseFloat(value))) {
-			alert('Number')
 			for (let elements of data.elements) {
 				if (value == elements.number) {
 					return {
@@ -31,18 +59,8 @@ export class Tab1Page {
 								"number": elements.number,
 								"atomic_mass": elements.atomic_mass,
 								"density": elements.density,
-								"summary": elements.summary,
-								"xpos": elements.xpos,
-								"ypos": elements.ypos,
 								"shells": elements.shells,
-								"electron_configuration": elements.electron_configuration,
-								"melt": elements.melt,
-								"boil": elements.boil,
-								"category": elements.category,
-								"phase": elements.phase,
-								"appearance": elements.appearance,
-								"color": elements.color,
-								"discovered_by": elements.discovered_by
+								"electron_configuration": elements.electron_configuration
 							}
 						]
 					}
@@ -50,7 +68,6 @@ export class Tab1Page {
 			}
 		}
 		else if (value.length > 3 && isNaN(value)) {
-			alert('Name')
 			for (let elements of data.elements) {
 				if (value == elements.name) {
 					return {
@@ -61,18 +78,8 @@ export class Tab1Page {
 								"number": elements.number,
 								"atomic_mass": elements.atomic_mass,
 								"density": elements.density,
-								"summary": elements.summary,
-								"xpos": elements.xpos,
-								"ypos": elements.ypos,
 								"shells": elements.shells,
-								"electron_configuration": elements.electron_configuration,
-								"melt": elements.melt,
-								"boil": elements.boil,
-								"category": elements.category,
-								"phase": elements.phase,
-								"appearance": elements.appearance,
-								"color": elements.color,
-								"discovered_by": elements.discovered_by
+								"electron_configuration": elements.electron_configuration
 							}
 						]
 					}
@@ -80,7 +87,6 @@ export class Tab1Page {
 			}
 		}
 		else if (value.length <= 3 && isNaN(value)) {
-			alert('Symbol')
 			for (let elements of data.elements) {
 				if (value == elements.symbol) {
 					return {
@@ -91,18 +97,8 @@ export class Tab1Page {
 								"number": elements.number,
 								"atomic_mass": elements.atomic_mass,
 								"density": elements.density,
-								"summary": elements.summary,
-								"xpos": elements.xpos,
-								"ypos": elements.ypos,
 								"shells": elements.shells,
-								"electron_configuration": elements.electron_configuration,
-								"melt": elements.melt,
-								"boil": elements.boil,
-								"category": elements.category,
-								"phase": elements.phase,
-								"appearance": elements.appearance,
-								"color": elements.color,
-								"discovered_by": elements.discovered_by
+								"electron_configuration": elements.electron_configuration
 							}
 						]
 					}
@@ -115,18 +111,13 @@ export class Tab1Page {
 	}
 
 	buttonClick(value) {
-		let element = this.searchElement(this.capitalizeFirstLetter(value)).properties[0]
-		alert(`
-Name: ${element.name}
-Number: ${element.number}
-Symbol: ${element.symbol}
-Mass: ${element.atomic_mass}
-Density: ${element.density}
-Summary: ${element.summary}
-Xpos: ${element.xpos}
-Ypos${element.ypos}
-Sheels: ${element.shells}
-Electron_Configuration: ${element.electron_configuration}
-`)
+		let element = this.searchElement(this.formatString(value));
+
+		if (element == null) {
+			this.updateLabel(element);
+		}
+		else {
+			this.updateLabel(element.properties[0]);
+		}
 	}
 }

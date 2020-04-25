@@ -14,16 +14,42 @@
   <ion-card>
     <ion-header>
       <ion-item>
-        <ion-label position="floating"> | Number | Name | Symbol | </ion-label>
-        <ion-input [(ngModel)]="inputValueTab2" ></ion-input>
+        <ion-label position="floating"> | Name | Symbol | Number | </ion-label>
+        <ion-input [(ngModel)]="input_value_tab2" ></ion-input>
       </ion-item>
     </ion-header>
   </ion-card>
-  <ion-button expand="full" shape="round" (click)="buttonClick(inputValueTab2)"> Ok </ion-button>
+  <ion-button expand="full" shape="round" (click)="buttonClick(input_value_tab2)"> Ok </ion-button>
   <ion-card>
     <ion-item>
       <ion-label class="ion-text-wrap">
-{{ inputValueTab2 }}
+Name: {{ element_name_label_tab2 }}<br>
+<br>
+Symbol: {{ element_symbol_label_tab2 }}<br>
+<br>
+Atomic Number: {{ element_number_label_tab2 }}<br>
+<br>
+Atomic Mass: {{ element_mass_label_tab2 }}<br>
+<br>
+Density: {{ element_density_label_tab2 }}<br>
+<br>
+Summary: {{ element_summary_label_tab2 }}<br>
+<br>
+Category: {{ element_category_label_tab2 }}<br>
+<br>
+Phase: {{ element_phase_label_tab2 }}<br>
+<br>
+Appearance: {{ element_appearance_label_tab2 }}<br>
+<br>
+Discovered By: {{ element_discovered_by_label_tab2 }}<br>
+<br>
+Melt: {{ element_melt_label_tab2 }}<br>
+<br>
+Boil: {{ element_boil_label_tab2 }}<br>
+<br>
+Xpos: {{ element_xpos_label_tab2 }}<br>
+<br>
+Ypos: {{ element_ypos_label_tab2 }}
       </ion-label>
     </ion-item>
   </ion-card>

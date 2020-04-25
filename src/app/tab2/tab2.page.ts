@@ -8,18 +8,67 @@ import * as data from 'src/app/PeriodicTable.json';
 })
 export class Tab2Page {
 
-	public inputValue: string = undefined;
+	public input_value_tab2: string = undefined;
+	public element_name_label_tab2: string = undefined;
+	public element_symbol_label_tab2: string = undefined;
+	public element_number_label_tab2: string = undefined;
+	public element_mass_label_tab2: string = undefined;
+	public element_density_label_tab2: string = undefined;
+	public element_summary_label_tab2: string = undefined;
+	public element_category_label_tab2: string = undefined;
+	public element_phase_label_tab2: string = undefined;
+	public element_appearance_label_tab2: string = undefined;
+	public element_discovered_by_label_tab2 = undefined;
+	public element_melt_label_tab2 = undefined;
+	public element_boil_label_tab2 = undefined;
+	public element_xpos_label_tab2 = undefined;
+	public element_ypos_label_tab2 = undefined;
 
 	constructor() {}
 
-	capitalizeFirstLetter(string) {
-		return String(string).replace(/\w\S*/g, function (txt) { return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase() })
+	updateLabel(element) {
+		if (element == null) {
+			alert('Element not found!')
+			this.input_value_tab2 = undefined;
+			this.element_name_label_tab2 = undefined;
+			this.element_symbol_label_tab2 = undefined;
+			this.element_number_label_tab2 = undefined;
+			this.element_mass_label_tab2 = undefined;
+			this.element_density_label_tab2 = undefined;
+			this.element_summary_label_tab2 = undefined;
+			this.element_category_label_tab2 = undefined;
+			this.element_phase_label_tab2 = undefined;
+			this.element_appearance_label_tab2 = undefined;
+			this.element_discovered_by_label_tab2 = undefined;
+			this.element_melt_label_tab2 = undefined;
+			this.element_boil_label_tab2 = undefined;
+			this.element_xpos_label_tab2 = undefined;
+			this.element_ypos_label_tab2 = undefined;
+		}
+		else {
+			this.element_name_label_tab2 = element.name;
+			this.element_symbol_label_tab2 = element.symbol;
+			this.element_number_label_tab2 = element.number;
+			this.element_mass_label_tab2 = element.atomic_mass;
+			this.element_density_label_tab2 = element.density;
+			this.element_summary_label_tab2 = element.summary;
+			this.element_category_label_tab2 = element.category;
+			this.element_phase_label_tab2 = element.phase;
+			this.element_appearance_label_tab2 = element.appearance;
+			this.element_discovered_by_label_tab2 = element.discovered_by;
+			this.element_melt_label_tab2 = element.melt;
+			this.element_boil_label_tab2 = element.boil;
+			this.element_xpos_label_tab2 = element.xpos;
+			this.element_ypos_label_tab2 = element.ypos;
+		}
+	}
+
+	formatString(string) { // Capitalize the first letter and remove the blanks from the beginning and end
+		return String(string).trim().replace(/\w\S*/g, function (txt) { return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase() })
 	}
 
 	searchElement(value) {
-		alert('searchElement')
 		if (!isNaN(parseFloat(value))) {
-			alert('Number')
 			for (let elements of data.elements) {
 				if (value == elements.number) {
 					return {
@@ -31,17 +80,14 @@ export class Tab2Page {
 								"atomic_mass": elements.atomic_mass,
 								"density": elements.density,
 								"summary": elements.summary,
-								"xpos": elements.xpos,
-								"ypos": elements.ypos,
-								"shells": elements.shells,
-								"electron_configuration": elements.electron_configuration,
-								"melt": elements.melt,
-								"boil": elements.boil,
 								"category": elements.category,
 								"phase": elements.phase,
 								"appearance": elements.appearance,
-								"color": elements.color,
-								"discovered_by": elements.discovered_by
+								"discovered_by": elements.discovered_by,
+								"melt": elements.melt,
+								"boil": elements.boil,
+								"xpos": elements.xpos,
+								"ypos": elements.ypos	
 							}
 						]
 					}
@@ -49,7 +95,6 @@ export class Tab2Page {
 			}
 		}
 		else if (value.length > 3 && isNaN(value)) {
-			alert('Name')
 			for (let elements of data.elements) {
 				if (value == elements.name) {
 					return {
@@ -61,17 +106,14 @@ export class Tab2Page {
 								"atomic_mass": elements.atomic_mass,
 								"density": elements.density,
 								"summary": elements.summary,
-								"xpos": elements.xpos,
-								"ypos": elements.ypos,
-								"shells": elements.shells,
-								"electron_configuration": elements.electron_configuration,
-								"melt": elements.melt,
-								"boil": elements.boil,
 								"category": elements.category,
 								"phase": elements.phase,
 								"appearance": elements.appearance,
-								"color": elements.color,
-								"discovered_by": elements.discovered_by
+								"discovered_by": elements.discovered_by,
+								"melt": elements.melt,
+								"boil": elements.boil,
+								"xpos": elements.xpos,
+								"ypos": elements.ypos
 							}
 						]
 					}
@@ -79,7 +121,6 @@ export class Tab2Page {
 			}
 		}
 		else if (value.length <= 3 && isNaN(value)) {
-			alert('Symbol')
 			for (let elements of data.elements) {
 				if (value == elements.symbol) {
 					return {
@@ -91,17 +132,14 @@ export class Tab2Page {
 								"atomic_mass": elements.atomic_mass,
 								"density": elements.density,
 								"summary": elements.summary,
-								"xpos": elements.xpos,
-								"ypos": elements.ypos,
-								"shells": elements.shells,
-								"electron_configuration": elements.electron_configuration,
-								"melt": elements.melt,
-								"boil": elements.boil,
 								"category": elements.category,
 								"phase": elements.phase,
 								"appearance": elements.appearance,
-								"color": elements.color,
-								"discovered_by": elements.discovered_by
+								"discovered_by": elements.discovered_by,
+								"melt": elements.melt,
+								"boil": elements.boil,
+								"xpos": elements.xpos,
+								"ypos": elements.ypos
 							}
 						]
 					}
@@ -114,25 +152,13 @@ export class Tab2Page {
 	}
 
 	buttonClick(value) {
-		let element = this.searchElement(this.capitalizeFirstLetter(value)).properties[0]
-		alert(`
-Name: ${element.name}
-Number: ${element.number}
-Symbol: ${element.symbol}
-Mass: ${element.atomic_mass}
-Density: ${element.density}
-Summary: ${element.summary}
-Xpos: ${element.xpos}
-Ypos${element.ypos}
-Sheels: ${element.shells}
-Electron_Configuration: ${element.electron_configuration}
-Melt: ${element.melt}
-Boil: ${element.boil}
-Category: ${element.category}
-Phase: ${element.phase}
-Appearance: ${element.appearance}
-Color: ${element.color}
-Discovered_by: ${element.discovered_by}
-`)
+		let element = this.searchElement(this.formatString(value));
+
+		if (element == null) {
+			this.updateLabel(element);
+		}
+		else {
+			this.updateLabel(element.properties[0]);
+		}
 	}
 }
