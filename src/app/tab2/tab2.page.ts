@@ -8,42 +8,42 @@ import * as data from 'src/app/PeriodicTable.json';
 })
 export class Tab2Page {
 
-	public input_value_tab2: string = undefined;
-	public element_name_label_tab2: string = undefined;
-	public element_symbol_label_tab2: string = undefined;
-	public element_number_label_tab2: string = undefined;
-	public element_mass_label_tab2: string = undefined;
-	public element_density_label_tab2: string = undefined;
-	public element_summary_label_tab2: string = undefined;
-	public element_category_label_tab2: string = undefined;
-	public element_phase_label_tab2: string = undefined;
-	public element_appearance_label_tab2: string = undefined;
-	public element_discovered_by_label_tab2 = undefined;
-	public element_melt_label_tab2 = undefined;
-	public element_boil_label_tab2 = undefined;
-	public element_xpos_label_tab2 = undefined;
-	public element_ypos_label_tab2 = undefined;
+	public input_value_tab2: string = null;
+	public element_name_label_tab2: string = null;
+	public element_symbol_label_tab2: string = null;
+	public element_number_label_tab2: string = null;
+	public element_mass_label_tab2: string = null;
+	public element_density_label_tab2: string = null;
+	public element_summary_label_tab2: string = null;
+	public element_category_label_tab2: string = null;
+	public element_phase_label_tab2: string = null;
+	public element_appearance_label_tab2: string = null;
+	public element_discovered_by_label_tab2 = null;
+	public element_melt_label_tab2 = null;
+	public element_boil_label_tab2 = null;
+	public element_xpos_label_tab2 = null;
+	public element_ypos_label_tab2 = null;
 
 	constructor() {}
 
 	updateLabel(element) {
 		if (element == null) {
 			alert('The value does not belong to any element!')
-			this.input_value_tab2 = undefined;
-			this.element_name_label_tab2 = undefined;
-			this.element_symbol_label_tab2 = undefined;
-			this.element_number_label_tab2 = undefined;
-			this.element_mass_label_tab2 = undefined;
-			this.element_density_label_tab2 = undefined;
-			this.element_summary_label_tab2 = undefined;
-			this.element_category_label_tab2 = undefined;
-			this.element_phase_label_tab2 = undefined;
-			this.element_appearance_label_tab2 = undefined;
-			this.element_discovered_by_label_tab2 = undefined;
-			this.element_melt_label_tab2 = undefined;
-			this.element_boil_label_tab2 = undefined;
-			this.element_xpos_label_tab2 = undefined;
-			this.element_ypos_label_tab2 = undefined;
+			this.input_value_tab2 = null;
+			this.element_name_label_tab2 = null;
+			this.element_symbol_label_tab2 = null;
+			this.element_number_label_tab2 = null;
+			this.element_mass_label_tab2 = null;
+			this.element_density_label_tab2 = null;
+			this.element_summary_label_tab2 = null;
+			this.element_category_label_tab2 = null;
+			this.element_phase_label_tab2 = null;
+			this.element_appearance_label_tab2 = null;
+			this.element_discovered_by_label_tab2 = null;
+			this.element_melt_label_tab2 = null;
+			this.element_boil_label_tab2 = null;
+			this.element_xpos_label_tab2 = null;
+			this.element_ypos_label_tab2 = null;
 		}
 		else {
 			this.element_name_label_tab2 = element.name;
@@ -72,22 +72,22 @@ export class Tab2Page {
 			for (let elements of data.elements) {
 				if (value == elements.number) {
 					return {
-						"properties": [
+						properties: [
 							{
-								"name": elements.name,
-								"symbol": elements.symbol,
-								"number": elements.number,
-								"atomic_mass": elements.atomic_mass,
-								"density": elements.density,
-								"summary": elements.summary,
-								"category": elements.category,
-								"phase": elements.phase,
-								"appearance": elements.appearance,
-								"discovered_by": elements.discovered_by,
-								"melt": elements.melt,
-								"boil": elements.boil,
-								"xpos": elements.xpos,
-								"ypos": elements.ypos	
+								name: elements.name,
+								symbol: elements.symbol,
+								number: elements.number,
+								atomic_mass: elements.atomic_mass,
+								density: elements.density,
+								summary: elements.summary,
+								category: elements.category,
+								phase: elements.phase,
+								appearance: elements.appearance,
+								discovered_by: elements.discovered_by,
+								melt: elements.melt,
+								boil: elements.boil,
+								xpos: elements.xpos,
+								ypos: elements.ypos	
 							}
 						]
 					}
@@ -98,22 +98,22 @@ export class Tab2Page {
 			for (let elements of data.elements) {
 				if (value == elements.name) {
 					return {
-						"properties": [
+						properties: [
 							{
-								"name": elements.name,
-								"symbol": elements.symbol,
-								"number": elements.number,
-								"atomic_mass": elements.atomic_mass,
-								"density": elements.density,
-								"summary": elements.summary,
-								"category": elements.category,
-								"phase": elements.phase,
-								"appearance": elements.appearance,
-								"discovered_by": elements.discovered_by,
-								"melt": elements.melt,
-								"boil": elements.boil,
-								"xpos": elements.xpos,
-								"ypos": elements.ypos
+								name: elements.name,
+								symbol: elements.symbol,
+								number: elements.number,
+								atomic_mass: elements.atomic_mass,
+								density: elements.density,
+								summary: elements.summary,
+								category: elements.category,
+								phase: elements.phase,
+								appearance: elements.appearance,
+								discovered_by: elements.discovered_by,
+								melt: elements.melt,
+								boil: elements.boil,
+								xpos: elements.xpos,
+								ypos: elements.ypos	
 							}
 						]
 					}
@@ -124,22 +124,22 @@ export class Tab2Page {
 			for (let elements of data.elements) {
 				if (value == elements.symbol) {
 					return {
-						"properties": [
+						properties: [
 							{
-								"name": elements.name,
-								"symbol": elements.symbol,
-								"number": elements.number,
-								"atomic_mass": elements.atomic_mass,
-								"density": elements.density,
-								"summary": elements.summary,
-								"category": elements.category,
-								"phase": elements.phase,
-								"appearance": elements.appearance,
-								"discovered_by": elements.discovered_by,
-								"melt": elements.melt,
-								"boil": elements.boil,
-								"xpos": elements.xpos,
-								"ypos": elements.ypos
+								name: elements.name,
+								symbol: elements.symbol,
+								number: elements.number,
+								atomic_mass: elements.atomic_mass,
+								density: elements.density,
+								summary: elements.summary,
+								category: elements.category,
+								phase: elements.phase,
+								appearance: elements.appearance,
+								discovered_by: elements.discovered_by,
+								melt: elements.melt,
+								boil: elements.boil,
+								xpos: elements.xpos,
+								ypos: elements.ypos	
 							}
 						]
 					}
