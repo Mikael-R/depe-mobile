@@ -1,26 +1,19 @@
 # Depe-Mobile
-Project under development.<br>
-All the features of Depe and a little more redone with Ionic.<br>
+All [Depe](https://github.com/Mikael-R/Depe) resources and a few other things, using the ionic framework.<br>
+The project has a json filled with information and is available in this [repository (https://github.com/Bowserinator/Periodic-Table-JSON).An incredible project and it is the database of this application, without them it would not be possible, thank you.<br>
 <br>
 If you want to see the python version [click here](https://github.com/Mikael-R/Depe). Its documented in Brazilian Portuguese!
 
-## Getting Started
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
-
-### Prerequisites
-
-What things you need to install the software and how to install them
-
+## Trying the project
+If you want to use the project on a computer.<br>
+<br>
+Install the software below.
 ```
-Node.js #See the web page in *built with* to install it
-Ionic #Use the command 'npm install -g @ionic/cli'
+Node.js # See the web page in *built with* to install it
+Ionic # Use the command 'npm install -g @ionic/cli'
 ```
 
-### Trying the project
-
-A step by step series of how run this project in your computer
-
+Clone and run the app
 ```
 # Clone the repository
 $ git clone https://github.com/Mikael-R/Depe-Mobile
@@ -41,6 +34,10 @@ $ ionic serve
 * HTML - Markup language
 * CSS - Style sheet language
 
-## Authors
+### Author
 
-* **Mikael** - *Initial work* - [Mikael-R](https://github.com/Mikael-R)
+| [<img src="https://user-images.githubusercontent.com/60241602/80879315-3b866a00-8c92-11ea-8ec7-2d722eb8e845.png" width=115><br><sub>@Mikael-R</sub>](https://github.com/Mikael-R) |
+| :---: |
+
+#### License
+This project is licensed under an MIT license, see the [LICENSE.md](LICENSE.md) file for details.
