@@ -15,41 +15,43 @@
     <ion-header>
       <ion-item>
         <ion-label position="floating"> | Name | Symbol | Number | </ion-label>
-        <ion-input [(ngModel)]="input_value_tab2" ></ion-input>
+        <ion-input [(ngModel)]="input_value"
+                   (keyup.enter)="buttonClick(input_value)"
+        ></ion-input>
       </ion-item>
     </ion-header>
   </ion-card>
-  <ion-button expand="full" shape="round" (click)="buttonClick(input_value_tab2)"> Ok </ion-button>
+  <ion-button expand="full" shape="round" (click)="buttonClick(input_value)"> Ok </ion-button>
   <ion-card>
     <ion-item>
       <ion-label class="ion-text-wrap">
-Name: {{ element_name_label_tab2 }}<br>
+Name: {{ element.name }}<br>
 <br>
-Symbol: {{ element_symbol_label_tab2 }}<br>
+Symbol: {{ element.symbol }}<br>
 <br>
-Atomic Number: {{ element_number_label_tab2 }}<br>
+Atomic Number: {{ element.number }}<br>
 <br>
-Atomic Mass: {{ element_mass_label_tab2 }}<br>
+Atomic Mass: {{ element.atomic_mass }}<br>
 <br>
-Density: {{ element_density_label_tab2 }}<br>
+Density: {{ element.density }}<br>
 <br>
-Summary: {{ element_summary_label_tab2 }}<br>
+Summary: {{ element.summary}}<br>
 <br>
-Category: {{ element_category_label_tab2 }}<br>
+Category: {{ element.category }}<br>
 <br>
-Phase: {{ element_phase_label_tab2 }}<br>
+Phase: {{ element.phase }}<br>
 <br>
-Appearance: {{ element_appearance_label_tab2 }}<br>
+Appearance: {{ element.appearance }}<br>
 <br>
-Discovered By: {{ element_discovered_by_label_tab2 }}<br>
+Discovered By: {{ element.discovered_by }}<br>
 <br>
-Melt: {{ element_melt_label_tab2 }}<br>
+Melt: {{ element.melt }}<br>
 <br>
-Boil: {{ element_boil_label_tab2 }}<br>
+Boil: {{ element.boil }}<br>
 <br>
-Xpos: {{ element_xpos_label_tab2 }}<br>
+Xpos: {{ element.xpos }}<br>
 <br>
-Ypos: {{ element_ypos_label_tab2 }}
+Ypos: {{ element.ypos }}
       </ion-label>
     </ion-item>
   </ion-card>

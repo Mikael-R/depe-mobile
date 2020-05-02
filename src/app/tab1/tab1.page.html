@@ -15,27 +15,29 @@
     <ion-header>
       <ion-item>
         <ion-label position="floating"> | Name | Symbol | Number | </ion-label>
-        <ion-input [(ngModel)]="input_value_tab1" ></ion-input>
+        <ion-input [(ngModel)]="input_value"
+                   (keyup.enter)="buttonClick(input_value)"
+        ></ion-input>
       </ion-item>
     </ion-header>
   </ion-card>
-  <ion-button expand="full" shape="round" (click)="buttonClick(input_value_tab1)"> Ok </ion-button>
+  <ion-button expand="full" shape="round" (click)="buttonClick(input_value)"> Ok </ion-button>
   <ion-card>
     <ion-item>
       <ion-label class="ion-text-wrap">
-Name: {{ element_name_label_tab1 }}<br>
+Name: {{ element.name }}<br>
 <br>
-Symbol: {{ element_symbol_label_tab1 }}<br>
+Symbol: {{ element.symbol }}<br>
 <br>
-Atomic Number: {{ element_number_label_tab1 }}<br>
+Atomic Number: {{ element.number }}<br>
 <br>
-Atomic Mass: {{ element_mass_label_tab1 }}<br>
+Atomic Mass: {{ element.atomic_mass}}<br>
 <br>
-Density: {{ element_density_label_tab1 }}<br>
+Density: {{ element.density }}<br>
 <br>
-Shells: {{ element_shells_label_tab1 }}<br>
+Shells: {{ element.shells }}<br>
 <br>
-Electron Configuration: {{ element_electron_configuration_label_tab1 }}
+Electron Configuration: {{ element.electron_configuration }}
       </ion-label>
     </ion-item>
   </ion-card>
