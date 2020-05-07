@@ -2,12 +2,12 @@ import { Component } from '@angular/core';
 import * as data from 'src/app/PeriodicTable.json';
 
 @Component({
-  selector: 'app-tab2',
-  templateUrl: 'tab2.page.html',
-  styleUrls: ['tab2.page.scss']
+  selector: 'app-search',
+  templateUrl: 'search.page.html',
+  styleUrls: ['search.page.scss']
 })
 
-export class Tab2Page {
+export class SearchPage {
 	public input_value: string = null
     public element: any = ''
 

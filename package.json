@@ -1,8 +1,8 @@
 {
-  "name": "myApp",
+  "name": "Depe-Mobile",
   "version": "0.0.1",
-  "author": "Ionic Framework",
-  "homepage": "https://ionicframework.com/",
+  "author": "Mikael Rolim de Aquino",
+  "homepage": "https://github.com/Mikael-R",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -51,5 +51,5 @@
     "tslint": "~5.15.0",
     "typescript": "~3.4.3"
   },
-  "description": "An Ionic project"
+  "description": "All Depe resources and a few other things, using the ionic framework"
 }

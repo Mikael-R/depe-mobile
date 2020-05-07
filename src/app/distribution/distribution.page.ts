@@ -2,12 +2,12 @@ import { Component } from '@angular/core';
 import * as data from 'src/app/PeriodicTable.json';
 
 @Component({
-    selector: 'app-tab1',
-    templateUrl: 'tab1.page.html',
-    styleUrls: ['tab1.page.scss']
+    selector: 'app-distribution',
+    templateUrl: 'distribution.page.html',
+    styleUrls: ['distribution.page.scss']
 })
 
-export class Tab1Page {
+export class DistributionPage {
     public input_value: string = null
 	public element: any = ''
 
