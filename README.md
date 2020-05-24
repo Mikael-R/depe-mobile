@@ -56,8 +56,7 @@ The download of the latest apk version of the project is available on the [relea
 
 ### Author ###
 
-| [<img src="https://user-images.githubusercontent.com/60241602/80879315-3b866a00-8c92-11ea-8ec7-2d722eb8e845.png" width=115><br><sub>@Mikael-R</sub>](https://github.com/Mikael-R) |
-| :---: |
+[Mikael Rolim de Aquino](https://github.com/Mikael-R/)
 
 #### License ####
 
