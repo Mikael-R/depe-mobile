@@ -43,7 +43,7 @@ $ ionic serve
    → Note If unavaliable, Unknown sources to turn on or off. Enabled when check mark is present.
 6. To continue, review prompt then tap OK.
 
-The download of the latest apk version of the project is available on the [release tab](https://github.com/Mikael-R/Depe-Mobile/releases). After downloading, enter the downloads folder with your file manager and click to install or in the browser download completed notification.
+The download of the latest apk version of the project is available [click here](https://github.com/Mikael-R/depe-mobile/releases/download/v1.0.0/Depe-Mobile.apk). After downloading, enter the downloads folder with your file manager and click to install or in the browser download completed notification.
 
 ## Built with ##
 
