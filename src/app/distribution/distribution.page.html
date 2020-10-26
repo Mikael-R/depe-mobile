@@ -1,44 +1,34 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>Eletronic Distribution</ion-title>
-  </ion-toolbar>
+	<ion-toolbar>
+		<ion-title>Eletronic Distribution</ion-title>
+	</ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Eletronic Distribution</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <ion-card>
-    <ion-header>
-      <ion-item>
-        <ion-label position="floating"> | Name | Symbol | Number | </ion-label>
-        <ion-input [(ngModel)]="input_value"
-                   (keyup.enter)="buttonClick(input_value)"
-        ></ion-input>
-      </ion-item>
-    </ion-header>
-  </ion-card>
-  <ion-button expand="full" shape="round" (click)="buttonClick(input_value)"> Ok </ion-button>
-  <ion-card>
-    <ion-item>
-      <ion-label class="ion-text-wrap">
-Name: {{ element.name }}<br>
-<br>
+	<ion-card>
+		<ion-item>
+			<ion-label position="floating">Name | Symbol | Number</ion-label>
+			<ion-input [(ngModel)]="input_value" (keyup.enter)="buttonClick(input_value)"></ion-input>
+		</ion-item>
+	</ion-card>
+	<ion-button expand="full" shape="round" (click)="buttonClick(input_value)"> Ok </ion-button>
+	<ion-card>
+		<ion-item>
+			<ion-label class="ion-text-wrap">
+				Name: {{ element.name }}<br>
+				<br>
 Symbol: {{ element.symbol }}<br>
-<br>
+				<br>
 Atomic Number: {{ element.number }}<br>
-<br>
+				<br>
 Atomic Mass: {{ element.atomic_mass}}<br>
-<br>
+				<br>
 Density: {{ element.density }}<br>
-<br>
+				<br>
 Shells: {{ element.shells }}<br>
-<br>
+				<br>
 Electron Configuration: {{ element.electron_configuration }}
       </ion-label>
-    </ion-item>
-  </ion-card>
+		</ion-item>
+	</ion-card>
 </ion-content>
