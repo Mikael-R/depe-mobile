@@ -5,7 +5,7 @@
   "homepage": "https://github.com/Mikael-R",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --disable-host-check",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
