@@ -1,39 +1,60 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>Eletronic Distribution</ion-title>
-  </ion-toolbar>
+	<ion-toolbar>
+		<ion-title>Eletronic Distribution</ion-title>
+	</ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-card>
-    <ion-item>
-      <ion-label position="floating">Name | Symbol | Number</ion-label>
-      <ion-input
-        [(ngModel)]="input_value"
-        (keyup.enter)="buttonClick(input_value)"
-      ></ion-input>
-    </ion-item>
-  </ion-card>
-  <ion-button expand="full" shape="round" (click)="buttonClick(input_value)">
-    Ok
-  </ion-button>
-  <ion-card>
-    <ion-item>
-      <ion-label class="ion-text-wrap">
-        Name: {{ element.name }}<br />
-        <br />
-        Symbol: {{ element.symbol }}<br />
-        <br />
-        Atomic Number: {{ element.number }}<br />
-        <br />
-        Atomic Mass: {{ element.atomic_mass}}<br />
-        <br />
-        Density: {{ element.density }}<br />
-        <br />
-        Shells: {{ element.shells }}<br />
-        <br />
-        Electron Configuration: {{ element.electron_configuration }}
-      </ion-label>
-    </ion-item>
-  </ion-card>
+	<ion-card>
+		<ion-item>
+			<ion-label position="floating">Name | Symbol | Number</ion-label>
+			<ion-input [(ngModel)]="input_value" (keyup.enter)="buttonClick(input_value)"></ion-input>
+		</ion-item>
+	</ion-card>
+	<ion-button expand="full" shape="round" (click)="buttonClick(input_value)">
+		Ok
+	</ion-button>
+	<ion-card>
+		<ion-list>
+			<ion-item>
+				<ion-icon slot="end" name="language-outline"></ion-icon>
+				<ion-label>Name: {{ element.name }}</ion-label>
+			</ion-item>
+
+			<ion-item>
+				<ion-icon slot="end" name="text-outline"></ion-icon>
+				<ion-label>Symbol: {{ element.symbol }}</ion-label>
+			</ion-item>
+
+			<ion-item>
+				<ion-icon slot="end" name="earth-outline"></ion-icon>
+				<ion-label>Atomic Number: {{ element.number }}</ion-label>
+			</ion-item>
+
+			<ion-item>
+				<ion-icon slot="end" name="barbell-outline"></ion-icon>
+				<ion-label>Atomic Mass: {{ element.atomic_mass ? element.atomic_mass + 'U' : '' }}</ion-label>
+			</ion-item>
+
+			<ion-item>
+				<ion-icon slot="end" name="planet-outline"></ion-icon>
+				<ion-label>Density:
+					{{ element.density === null ? 'unknown' : element.density === undefined ? '' : element.density + 'g/cm³' }}
+				</ion-label>
+			</ion-item>
+
+
+			<ion-item>
+				<ion-icon slot="end" name="magnet-outline"></ion-icon>
+				<ion-label>Shells: {{ element.shells }}</ion-label>
+			</ion-item>
+
+			<ion-item>
+				<ion-icon slot="end" name="cog-outline"></ion-icon>
+				<ion-label class="ion-text-wrap">
+					Electron Configuration: {{ element.electron_configuration }}
+				</ion-label>
+			</ion-item>
+		</ion-list>
+	</ion-card>
 </ion-content>

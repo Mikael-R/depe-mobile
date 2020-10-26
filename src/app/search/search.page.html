@@ -1,53 +1,100 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>Search Element</ion-title>
-  </ion-toolbar>
+	<ion-toolbar>
+		<ion-title>Search Element</ion-title>
+	</ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-card>
-    <ion-item>
-      <ion-label position="floating">Name | Symbol | Number</ion-label>
-      <ion-input
-        [(ngModel)]="input_value"
-        (keyup.enter)="buttonClick(input_value)"
-      ></ion-input>
-    </ion-item>
-  </ion-card>
-  <ion-button expand="full" shape="round" (click)="buttonClick(input_value)">
-    Ok
-  </ion-button>
-  <ion-card>
-    <ion-item>
-      <ion-label class="ion-text-wrap">
-        Name: {{ element.name }}<br />
-        <br />
-        Symbol: {{ element.symbol }}<br />
-        <br />
-        Atomic Number: {{ element.number }}<br />
-        <br />
-        Atomic Mass: {{ element.atomic_mass }}<br />
-        <br />
-        Density: {{ element.density }}<br />
-        <br />
-        Summary: {{ element.summary}}<br />
-        <br />
-        Category: {{ element.category }}<br />
-        <br />
-        Phase: {{ element.phase }}<br />
-        <br />
-        Appearance: {{ element.appearance }}<br />
-        <br />
-        Discovered By: {{ element.discovered_by }}<br />
-        <br />
-        Melt: {{ element.melt }}<br />
-        <br />
-        Boil: {{ element.boil }}<br />
-        <br />
-        Xpos: {{ element.xpos }}<br />
-        <br />
-        Ypos: {{ element.ypos }}
-      </ion-label>
-    </ion-item>
-  </ion-card>
+	<ion-card>
+		<ion-item>
+			<ion-label position="floating">Name | Symbol | Number</ion-label>
+			<ion-input [(ngModel)]="input_value" (keyup.enter)="buttonClick(input_value)"></ion-input>
+		</ion-item>
+	</ion-card>
+	<ion-button expand="full" shape="round" (click)="buttonClick(input_value)">
+		Ok
+	</ion-button>
+	<ion-card>
+		<ion-list>
+			<ion-item>
+				<ion-icon slot="end" name="language-outline"></ion-icon>
+				<ion-label>Name: {{ element.name }}</ion-label>
+			</ion-item>
+
+			<ion-item>
+				<ion-icon slot="end" name="text-outline"></ion-icon>
+				<ion-label>Symbol: {{ element.symbol }}</ion-label>
+			</ion-item>
+
+			<ion-item>
+				<ion-icon slot="end" name="earth-outline"></ion-icon>
+				<ion-label>Atomic Number: {{ element.number }}</ion-label>
+			</ion-item>
+
+			<ion-item>
+				<ion-icon slot="end" name="barbell-outline"></ion-icon>
+				<ion-label>Atomic Mass: {{ element.atomic_mass ? element.atomic_mass + 'U' : '' }}</ion-label>
+			</ion-item>
+
+			<ion-item>
+				<ion-icon slot="end" name="planet-outline"></ion-icon>
+				<ion-label>Density:
+					{{ element.density === null ? 'unknown' : element.density === undefined ? '' : element.density + 'g/cm³' }}
+				</ion-label>
+			</ion-item>
+
+			<ion-item>
+				<ion-icon slot="end" name="newspaper-outline"></ion-icon>
+				<ion-label class="ion-text-wrap">Summary: {{ element.summary}}</ion-label>
+			</ion-item>
+
+			<ion-item>
+				<ion-icon slot="end" name="skull-outline"></ion-icon>
+				<ion-label class="ion-text-wrap">Category: {{ element.category }}</ion-label>
+			</ion-item>
+
+			<ion-item>
+				<ion-icon slot="end" name="color-filter-outline"></ion-icon>
+				<ion-label>Phase: {{ element.phase }}</ion-label>
+			</ion-item>
+
+			<ion-item>
+				<ion-icon slot="end" name="eye-outline"></ion-icon>
+				<ion-label class="ion-text-wrap">Appearance:
+					{{ element.appearance === null ? 'unknown' : element.appearance === undefined ? '' : element.appearance }}
+				</ion-label>
+			</ion-item>
+
+			<ion-item>
+				<ion-icon slot="end" name="telescope-outline"></ion-icon>
+				<ion-label>Discovered By:
+					{{ element.discovered_by === null ? 'unknown' : element.discovered_by === undefined ? '' : element.discovered_by }}
+				</ion-label>
+			</ion-item>
+
+			<ion-item>
+				<ion-icon slot="end" name="snow-outline"></ion-icon>
+				<ion-label>Melt:
+					{{ element.melt === null ? 'unknown' : element.melt === undefined ? '' : ((element.melt - 32) / 1.8).toFixed(2) + '℃' }}
+				</ion-label>
+			</ion-item>
+
+			<ion-item>
+				<ion-icon slot="end" name="flame-outline"></ion-icon>
+				<ion-label>Boil:
+					{{ element.boil === null ? 'unknown' : element.boil === undefined ? '' : ((element.boil - 32) / 1.8).toFixed(2) + '℃' }}
+				</ion-label>
+			</ion-item>
+
+			<ion-item>
+				<ion-icon slot="end" name="compass-outline"></ion-icon>
+				<ion-label>Xpos: {{ element.xpos }}</ion-label>
+			</ion-item>
+
+			<ion-item>
+				<ion-icon slot="end" name="compass-outline"></ion-icon>
+				<ion-label>Ypos: {{ element.ypos }}</ion-label>
+			</ion-item>
+		</ion-list>
+	</ion-card>
 </ion-content>
