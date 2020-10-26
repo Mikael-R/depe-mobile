@@ -1,5 +1,5 @@
 import { Component } from '@angular/core'
-import * as data from 'src/app/PeriodicTable.json'
+import { elements } from 'src/app/PeriodicTable.json'
 
 @Component({
   selector: 'app-search',
@@ -12,43 +12,54 @@ export class SearchPage {
 
   constructor() {}
 
+  async presentToast(message: string) {
+    const toast = document.createElement('ion-toast')
+    toast.message = message
+    toast.duration = 2000
+    toast.position = 'top'
+
+    document.body.appendChild(toast)
+    return toast.present()
+  }
+
   updateLabel(element) {
     if (element == null) {
-      alert('The value does not belong to any element!')
+      this.presentToast('The value does not belong to any element!')
       this.element = ''
     } else {
       this.element = element
     }
   }
 
-  formatString(string) {
+  formatString(string: string) {
     // Capitalize the first letter and remove the blanks
     return String(string)
       .replace(/ /g, '')
-      .replace(/\w\S*/g, function (txt) {
-        return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase()
-      })
+      .replace(
+        /\w\S*/g,
+        txt => txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase()
+      )
   }
 
   searchElement(value) {
-    let elements = null
+    let element = null
 
     if (!isNaN(value)) {
-      elements = data.elements.filter(el => Number(value) === el.number)
+      element = elements.find(el => Number(value) === el.number)
     } else if (isNaN(value)) {
       if (value.length > 3) {
-        elements = data.elements.filter(el => String(value) === el.name)
+        element = elements.find(el => String(value) === el.name)
       } else {
-        elements = data.elements.filter(el => String(value) === el.symbol)
+        element = elements.find(el => String(value) === el.symbol)
       }
     }
 
-    return elements
+    return element
   }
 
   buttonClick(value) {
-    let element = this.searchElement(this.formatString(value))
+    const element = this.searchElement(this.formatString(value))
 
-    this.updateLabel(element[0])
+    this.updateLabel(element)
   }
 }
