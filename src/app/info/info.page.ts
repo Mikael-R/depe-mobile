@@ -1,12 +1,10 @@
-import { Component } from '@angular/core';
+import { Component } from '@angular/core'
 
 @Component({
   selector: 'app-info',
   templateUrl: 'info.page.html',
-  styleUrls: ['info.page.scss']
+  styleUrls: ['info.page.scss'],
 })
 export class InfoPage {
-
   constructor() {}
-
 }
